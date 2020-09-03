@@ -3,7 +3,7 @@
 The quick answer is to use `application/x-www-form-urlencoded;charset=UTF-8` as Content-Type and encode payload as query string:
 
 ### Front-end side
-```
+```javascript
 // Read input values (jQuery example)
 let payload = {
     'name': $('#name').val(),
@@ -30,10 +30,10 @@ fetch('/endpoint', {
 ```
 
 ### Back-end side ###
-
-```
+```nim
 import 
     prologue
+
 
 let env = loadPrologueEnv(".env")
 let settings* = newSettings(
@@ -43,8 +43,9 @@ let settings* = newSettings(
         staticDirs = [env.get("staticDir")],
         secretKey = env.getOrDefault("secretKey", "")
     )
-    
+
 var app = newApp(settings = settings, middlewares = @[debugRequestMiddleware(), compileStyles()])
+
 
 # This is back-end route
 proc endpointRouteExample(ctx: Context) {.async.} =
@@ -58,7 +59,6 @@ proc endpointRouteExample(ctx: Context) {.async.} =
     echo name
     echo email
     echo message
-    echo body
 
 
 app.addRoute("/endpoint", endpointRouteExample,  @[HttpPost])
