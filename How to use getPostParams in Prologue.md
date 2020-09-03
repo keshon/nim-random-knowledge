@@ -66,5 +66,5 @@ app.addRoute("/endpoint", endpointRouteExample,  @[HttpPost])
 app.run()
 ```
 
-## Why it is important?
-Because passing values via `FormData` type or as `multipart/form-data` or as `application/json` just **won't work
+## Why it is important
+Because passing values via `FormData` type or as `multipart/form-data` or as `application/json` just **won't work**
