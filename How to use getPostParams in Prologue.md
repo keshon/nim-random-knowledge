@@ -1,6 +1,6 @@
 ## How to getPostParams in Prologue if POST params are sent by fetch
 
-Ok the quick answer is to use 'application/x-www-form-urlencoded;charset=UTF-8' as Content-Type and encode payload as query string:
+The quick answer is to use `application/x-www-form-urlencoded;charset=UTF-8` as Content-Type and encode payload as query string:
 
 ### Front-end side
 ```
@@ -64,6 +64,7 @@ proc endpointRouteExample(ctx: Context) {.async.} =
 app.addRoute("/endpoint", endpointRouteExample,  @[HttpPost])
 
 app.run()
+```
 
 ## Why it is important?
-Because passing values via `FormData` type or as `multipart/form-data` or as `application/json` just won't work
+Because passing values via `FormData` type or as `multipart/form-data` or as `application/json` just **won't work
