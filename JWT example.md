@@ -1,3 +1,5 @@
+[taken from here](https://github.com/yglukhov/nim-jwt/issues/11#issuecomment-694504078)
+
 ...just need to uncomment this in jwt.nim
 ```nim
   # of ES256:
